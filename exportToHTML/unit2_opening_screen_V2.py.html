@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>unit2_opening_screen_V2.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6a8759;}
+.s5 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+unit2_opening_screen_V2.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Hangman opening screen version 2</span>
+<span class="s2">def </span><span class="s1">opening_screen():</span>
+    <span class="s3">&quot;&quot;&quot; 
+    This function prints the opening screen to the game - 'Hangman' writen in ASCII 
+    and the number of false tries the user gets. 
+    :param: none 
+    :return: none 
+    &quot;&quot;&quot;</span>
+    <span class="s1">HANGMAN_ASCII_ART = </span><span class="s4">&quot;&quot;&quot;      _    _                                          
+     | |  | |                                         
+     | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __   
+     |  __  |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ </span>
+     <span class="s4">| |  | | (_| | | | | (_| | | | | | | (_| | | | | 
+     |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_| 
+                          __/ |                       
+                         |___/&quot;&quot;&quot;</span>
+
+    <span class="s1">MAX_TRIES = </span><span class="s5">6</span>
+    <span class="s1">print(HANGMAN_ASCII_ART)</span>
+    <span class="s1">print(MAX_TRIES)</span>
+
+
+<span class="s2">def </span><span class="s1">main():</span>
+    <span class="s1">opening_screen()</span>
+
+
+<span class="s2">if </span><span class="s1">__name__ == </span><span class="s4">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s1">main()</span>
+
+
+</pre>
+</body>
+</html>

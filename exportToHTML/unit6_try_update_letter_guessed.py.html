@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>unit6_try_update_letter_guessed.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+unit6_try_update_letter_guessed.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># try to update the letter_guessed list</span>
+<span class="s2">from </span><span class="s1">unit6_check_valid_input </span><span class="s2">import </span><span class="s1">check_valid_input</span>
+
+
+<span class="s2">def </span><span class="s1">try_update_letter_guessed(letter_guessed</span><span class="s2">, </span><span class="s1">old_letters_guessed):</span>
+    <span class="s3">&quot;&quot;&quot; 
+    This function tries to add the new 'letter_guessed' to the list of the 'old_letters_guessed'. 
+    If the letter is valid, meaning 1 alphabetical letter, that is not in the 'old_letters_guessed' list yet, 
+    the function will add the new letter to the list and return a 'True' value. 
+    If the letter is not valid, it will print the 'letter_guessed' as a capital, 
+    and underneath it will print the 'old_letters_guessed' list as lower case letters, 
+    separated with little arrows. It will also return a 'False' Value. 
+    :param letter_guessed: The new character entered by the user. 
+    :param old_letters_guessed: The old letters that were entered by the user. 
+    :type: letter_guessed: str 
+    :type old_letters_guessed: a list of strings 
+    :return: 'True' if character fit criteria and added. Else return 'False'. 
+    :rtype: bool 
+    &quot;&quot;&quot;</span>
+    <span class="s2">if </span><span class="s1">check_valid_input(letter_guessed</span><span class="s2">, </span><span class="s1">old_letters_guessed):</span>
+        <span class="s1">old_letters_guessed += [letter_guessed]</span>
+        <span class="s2">return True</span>
+    <span class="s2">else</span><span class="s1">:</span>
+        <span class="s1">old_letters_str = </span><span class="s4">&quot; -&gt; &quot;</span><span class="s1">.join(sorted(old_letters_guessed))</span>
+        <span class="s1">print(</span><span class="s4">&quot;X&quot;</span><span class="s1">)</span>
+        <span class="s1">print(old_letters_str)</span>
+        <span class="s2">return False</span>
+
+
+<span class="s2">def </span><span class="s1">main():</span>
+    <span class="s1">old_letters = [</span><span class="s4">'s'</span><span class="s2">, </span><span class="s4">'p'</span><span class="s2">, </span><span class="s4">'o'</span><span class="s2">, </span><span class="s4">'f'</span><span class="s1">]</span>
+    <span class="s1">try_update_letter_guessed(</span><span class="s4">'t'</span><span class="s2">, </span><span class="s1">old_letters)</span>
+
+<span class="s2">if </span><span class="s1">__name__ == </span><span class="s4">'__main__'</span><span class="s1">:</span>
+    <span class="s1">main()</span>
+
+
+
+
+</pre>
+</body>
+</html>
