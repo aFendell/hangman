@@ -21,9 +21,9 @@ def main():
         file_path = input("Please make sure to enter a valid file path: ")
 
     # Ask user to enter an index number to select a word
-    index = input("Please select a word: ")
+    index = input("Please select a word number: ")
     while not is_index_valid(index):
-        index = input("Please make sure to enter an integer greater then 0: ")
+        index = input("Make sure to enter an integer greater then 0: ")
 
     # Choose a secret word
     secret_word = choose_word(file_path, int(index))
