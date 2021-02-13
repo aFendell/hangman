@@ -12,9 +12,9 @@ from check_win import check_win
 def main():
     # Present 'Hangman' opening screen
     opening_screen()
-    # Ask user to enter file_path and check if file exists
+    # Ask user to type a file path and check if file exists
     file_path = choose_word_V2.path_input()
-    # Ask user to enter an index number to select a word
+    # Ask user to select a word
     index = choose_word_V2.index_input()
     # Choose a secret word
     secret_word = choose_word_V2.choose_word(file_path, index)

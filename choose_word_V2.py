@@ -9,15 +9,16 @@ def path_input():
     :return: file_path
     :rtype: file_path: str
     """
-    # Ask user to type a file path
-    file_path = input("Please type a file path and press enter: ")
+    file_path = ""
     path_valid = False
     while not path_valid:
+        # Ask user to type a file path
+        file_path = input("Please type a file path and press enter: ")
+        # check if path is valid
         if path.isfile(file_path):
             path_valid = True
         else:
-            print("File does not exist!")
-            file_path = input("Please make sure to type a valid file path: ")
+            print("File does not exist! Please make sure to type a valid file path.")
     return file_path
 
 
@@ -29,15 +30,16 @@ def index_input():
     :return: index: The number of the word the user wants to select.
     :rtype: index: int
     """
-    # Ask user to select a word number
-    index = input("Please select a word number and press enter: ")
-    # verify that user entered an integer greater then 0
+    index = ""
     index_valid = False
     while not index_valid:
+        # Ask user to select a word number
+        index = input("Please select a word number and press enter: ")
+        # check if user entered an integer greater then 0
         if index.isnumeric() and int(index) > 0:
             index_valid = True
         else:
-            index = input("Make sure to enter an integer greater then 0: ")
+            print("Word number is not valid! Make sure to type an integer greater then 0.")
     return int(index)
 
 
@@ -69,7 +71,6 @@ def choose_word(file_path, index):
 
 
 def main():
-
     file_path = path_input()
     index = index_input()
 
