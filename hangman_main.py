@@ -1,8 +1,6 @@
 # Hangman Game
 from opening_screen_V2 import opening_screen
-from check_path import is_path_valid
-from check_index import is_index_valid
-from choose_word import choose_word
+import choose_word_V2
 from print_hangman import print_hangman
 from word_pattern import word_pattern
 from check_valid_input import check_valid_input
@@ -14,23 +12,14 @@ from check_win import check_win
 def main():
     # Present 'Hangman' opening screen
     opening_screen()
-
     # Ask user to enter file_path and check if file exists
-    file_path = input("Please enter a file path: ")
-    while not is_path_valid(file_path):
-        file_path = input("Please make sure to enter a valid file path: ")
-
+    file_path = choose_word_V2.path_input()
     # Ask user to enter an index number to select a word
-    index = input("Please select a word number: ")
-    while not is_index_valid(index):
-        index = input("Make sure to enter an integer greater then 0: ")
-
+    index = choose_word_V2.index_input()
     # Choose a secret word
-    secret_word = choose_word(file_path, int(index))
-
+    secret_word = choose_word_V2.choose_word(file_path, index)
     # Present the 1st 'Hangman' image
     print_hangman(1)
-
     # Present the secret_word pattern
     word_pattern(secret_word)
 
