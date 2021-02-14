@@ -16,9 +16,10 @@ def main():
     index = choose_word.index_input()
     # Choose a secret word
     secret_word = choose_word.choose_word(file_path, index)
-    # Present the 1st 'Hangman' image
+    # set variables
     old_letters_guessed = []
     num_of_tries = 1
+    # Present the 1st 'Hangman' image
     print_hangman(num_of_tries)
     # Present the secret_word pattern
     show_hidden_word(secret_word, old_letters_guessed)
