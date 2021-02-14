@@ -18,6 +18,7 @@ def check_win(secret_word, old_letters_guessed):
             win = "no"
             break
     if win == "yes":
+        print("Win ! ! !")
         return True
     elif win == "no":
         return False

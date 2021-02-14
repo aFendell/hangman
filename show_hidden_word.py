@@ -27,6 +27,7 @@ def main():
     old_letters_guessed = ['s', 'p', 'j', 'i', 'm', 'k']
     show_hidden_word(secret_word, old_letters_guessed)
 
+
 if __name__ == '__main__':
     main()
 

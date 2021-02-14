@@ -1,5 +1,27 @@
 # try to update the letter_guessed list
-from check_valid_input import check_valid_input
+
+
+def check_valid_input(letter_guessed, old_letters_guessed):
+    """
+    This function checks the validity of the users input.
+    It returns 'True' if:
+    1. The str 'letter_guessed' is 1 character only.
+    2. The str 'letter_guessed' is an alphabetical character.
+    3. The str 'letter_guessed' is a letter that is not already in the list 'old_letters_guessed'.
+    Else it returns 'False'
+    :param letter_guessed
+    :param old_letters_guessed:
+    :type: letter_guessed: str
+    :type: old_letter_guessed: list
+    :return: True or False
+    :rtype: bool
+    """
+    if len(letter_guessed) == 1\
+            and letter_guessed.isalpha()\
+            and letter_guessed not in old_letters_guessed:
+        return True
+    else:
+        return False
 
 
 def try_update_letter_guessed(letter_guessed, old_letters_guessed):
@@ -30,6 +52,12 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
 def main():
     old_letters = ['s', 'p', 'o', 'f']
     try_update_letter_guessed('t', old_letters)
+    print(old_letters)
+    try_update_letter_guessed('s', old_letters)
+    try_update_letter_guessed('ep', old_letters)
+    try_update_letter_guessed('$', old_letters)
+    try_update_letter_guessed('7', old_letters)
+
 
 if __name__ == '__main__':
     main()
