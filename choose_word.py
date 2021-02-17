@@ -18,7 +18,7 @@ def path_input():
         if path.isfile(file_path):
             path_valid = True
         else:
-            print("File does not exist! Please make sure to type a valid file path.")
+            print("File does not exist! Make sure to type a valid file path.")
     return file_path
 
 

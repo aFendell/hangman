@@ -1,7 +1,8 @@
-HANGMAN_PHOTOS = {1: """     
-Guess the secret word, or you'll be hanged!
-     
-     x-------x
+from os import system, name
+from time import sleep
+
+
+HANGMAN_PHOTOS = {1: """     x-------x
      |/      |
      |
      |
@@ -60,25 +61,42 @@ Guess the secret word, or you'll be hanged!
      GAME OVER"""}
 
 
-def print_hangman(num_of_tries):
+def clear():
     """
-    This function receives the number of tries and prints out the hangman image.
-    :param num_of_tries: The number of guesses the user got wrong.
-    :type: num_of_tries: int
-    :return: print an image from the HANGMAN_PHOTOS dictionary (holds the seven images of the hangman).
-    :rtype: none
+    This function clears the screen.
+    :param: none
+    :return: none
     """
-    print(HANGMAN_PHOTOS[num_of_tries])
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
 
 
 def main():
-    print_hangman(1)
-    print_hangman(2)
-    print_hangman(3)
-    print_hangman(4)
-    print_hangman(5)
-    print_hangman(6)
-    print_hangman(7)
+
+    print(HANGMAN_PHOTOS[1])
+    sleep(3)
+    clear()
+    print(HANGMAN_PHOTOS[2])
+    sleep(3)
+    clear()
+    print(HANGMAN_PHOTOS[3])
+    sleep(3)
+    clear()
+    print(HANGMAN_PHOTOS[4])
+    sleep(3)
+    clear()
+    print(HANGMAN_PHOTOS[5])
+    sleep(3)
+    clear()
+    print(HANGMAN_PHOTOS[6])
+    sleep(3)
+    clear()
+    print(HANGMAN_PHOTOS[7])
+    sleep(3)
+
+    input("\n\nPress enter to exit")
 
 
 if __name__ == '__main__':

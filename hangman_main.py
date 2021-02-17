@@ -5,6 +5,7 @@ from print_hangman import print_hangman
 from try_update_letter_guessed import try_update_letter_guessed
 from show_hidden_word import show_hidden_word
 from check_win import check_win
+from clear_screen import clear
 
 
 def main():
@@ -19,35 +20,35 @@ def main():
     # set variables
     old_letters_guessed = []
     num_of_tries = 1
-    # Present the 1st 'Hangman' image
-    print_hangman(num_of_tries)
-    # Present the secret_word pattern
-    show_hidden_word(secret_word, old_letters_guessed)
-    print("Guess the secret word.")
     # run a loop for max 6 failed attempts
     while num_of_tries < 7:
+        print_hangman(num_of_tries)
+        show_hidden_word(secret_word, old_letters_guessed)
         # Ask user to guess a single letter and press enter
-        ch = (input("Type a single alphabetic letter: ")).lower()
+        ch = (input("Guess a letter: ")).lower()
+        # clear screen
+        clear()
         # check if letter is valid
         if try_update_letter_guessed(ch, old_letters_guessed):
-            # show partial word
-            show_hidden_word(secret_word, old_letters_guessed)
             # check if letter in secret word
             if ch in secret_word:
+                print("\n(:\n")
                 # check if win
                 if check_win(secret_word, old_letters_guessed):
                     break
             # failed attempt
             else:
                 num_of_tries += 1
-                print(":(")
-                print_hangman(num_of_tries)
+                print("\n:(\n")
                 # reached max tries - Game over
                 if num_of_tries == 7:
-                    print("\n    LOSE ! ! !\n    GAME OVER ! ! !")
-                    break
+                    print_hangman(num_of_tries)
+    # exit the game
+    input("\n\nPress enter to exit\n\n")
 
 
 if __name__ == "__main__":
     main()
+
+
 

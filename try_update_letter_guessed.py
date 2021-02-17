@@ -44,8 +44,9 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
         return True
     else:
         old_letters_str = " -> ".join(sorted(old_letters_guessed))
-        print("X")
-        print(old_letters_str)
+        print("\nX")
+        if old_letters_guessed:
+            print(old_letters_str + "\n")
         return False
 
 
