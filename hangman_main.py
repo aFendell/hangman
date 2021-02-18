@@ -2,10 +2,12 @@
 from opening_screen import opening_screen
 import choose_word
 from print_hangman import print_hangman
+from print_game_art import print_art
 from try_update_letter_guessed import try_update_letter_guessed
 from show_hidden_word import show_hidden_word
-from check_win import check_win
+import check_win
 from clear_screen import clear
+from time import sleep
 
 
 def main():
@@ -20,11 +22,17 @@ def main():
     # set variables
     old_letters_guessed = []
     num_of_tries = 1
+    # game starts
+    print("\nGuess the secret word, or you'll be hanged!")
+    input("\n\nPress enter to start\n\n")
+    clear()
     # run a loop for max 6 failed attempts
     while num_of_tries < 7:
+        # print the hangman image
         print_hangman(num_of_tries)
+        # show partial secret word
         show_hidden_word(secret_word, old_letters_guessed)
-        # Ask user to guess a single letter and press enter
+        # Ask user to guess a single letter
         ch = (input("Guess a letter: ")).lower()
         # clear screen
         clear()
@@ -32,18 +40,26 @@ def main():
         if try_update_letter_guessed(ch, old_letters_guessed):
             # check if letter in secret word
             if ch in secret_word:
-                print("\n(:\n")
+                print_art("smile")
                 # check if win
-                if check_win(secret_word, old_letters_guessed):
+                if check_win.check_win(secret_word, old_letters_guessed):
+                    show_hidden_word(secret_word, old_letters_guessed)
+                    sleep(3)
+                    clear()
+                    print_art("win")
                     break
             # failed attempt
             else:
                 num_of_tries += 1
-                print("\n:(\n")
-                # reached max tries - Game over
-                if num_of_tries == 7:
-                    print_hangman(num_of_tries)
-    # exit the game
+                print_art("sad")
+    # reached max tries - Game over
+    if num_of_tries == 7:
+        print_hangman(num_of_tries)
+        show_hidden_word(secret_word, old_letters_guessed)
+        sleep(2)
+        clear()
+        print_art("lose")
+    # exit game
     input("\n\nPress enter to exit\n\n")
 
 
