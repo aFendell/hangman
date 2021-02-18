@@ -18,10 +18,31 @@ def check_win(secret_word, old_letters_guessed):
             win = "no"
             break
     if win == "yes":
-        print("WIN\nGreat job!")
         return True
     elif win == "no":
         return False
+
+
+def win_screen():
+    """
+    This function prints the 'WIN' screen
+    :param: none
+    :return: none
+    """
+    WIN_ART = """
+            __          _______ _   _   _
+            \\ \\        / /_   _| \\ | | | |
+             \\ \\  /\\  / /  | | |  \\| | | |
+              \\ \\/  \\/ /   | | | . ` | | |
+               \\  /\\  /   _| |_| |\\  | |_|
+                \\/  \\/   |_____|_| \\_| (_)
+      _____                _          _       _       _
+     / ____|              | |        | |     | |     | |
+    | |  __ _ __ ___  __ _| |_       | | ___ | |__   | |
+    | | |_ | '__/ _ \\/ _` | __|  _   | |/ _ \\| '_ \\  | |
+    | |__| | | |  __/ (_| | |_  | |__| | (_) | |_) | |_|
+     \\_____|_|  \\___|\\__,_|\\__|  \\____/ \\___/|_.__/  (_)"""
+    print(WIN_ART)
 
 
 def main():
@@ -36,6 +57,7 @@ def main():
     secret_word = "song"
     old_letters_guessed = ['d', 'g', 'o', 'i', 's', 'k', 'n']
     print(check_win(secret_word, old_letters_guessed))
+
 
 if __name__ == '__main__':
     main()

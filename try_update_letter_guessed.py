@@ -1,4 +1,3 @@
-# try to update the letter_guessed list
 
 
 def check_valid_input(letter_guessed, old_letters_guessed):

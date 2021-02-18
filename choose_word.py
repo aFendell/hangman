@@ -5,7 +5,7 @@ def path_input():
     """
     This function receives from the user the path to a text file.
     It then checks that the file exists and returns the path.
-    :param: self
+    :param: none
     :return: file_path
     :rtype: file_path: str
     """
@@ -26,7 +26,7 @@ def index_input():
     """
     This function receives from the user a word number to select.
     It verifies that the number is an integer, greater then 0.
-    :param: self
+    :param: none
     :return: index: The number of the word the user wants to select.
     :rtype: index: int
     """
@@ -50,9 +50,9 @@ def choose_word(file_path, index):
     2. An index number (int) representing the position of a word.
     It returns the word in the index position.
     :param file_path: The path to a text file containing words separated by whitespace.
-    :type: str
     :param index: An index number representing the position of a word.
-    :type: int
+    :type: file_path: str
+    :type: index: int
     :return: chosen_word: The word in the index position.
     :rtype: str
     """
@@ -61,9 +61,9 @@ def choose_word(file_path, index):
         words_str = file.read()
         # split string of words into a list
         words_list = words_str.split(" ")
-    # choose index word
-    # if index is larger then list, run loop on list
+    # Adjust index
     index -= 1
+    # if index is larger then list, run loop on list
     while index >= len(words_list):
         index -= len(words_list)
     chosen_word = words_list[index]

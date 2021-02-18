@@ -1,7 +1,4 @@
-HANGMAN_PHOTOS = {1: """     
-Guess the secret word, or you'll be hanged!
-     
-     x-------x
+HANGMAN_PHOTOS = {1: """     x-------x
      |/      |
      |
      |
@@ -55,9 +52,7 @@ Guess the secret word, or you'll be hanged!
      |      /|\\
      |      / \\
      |
-    ===========
-        LOSE
-     GAME OVER"""}
+    ==========="""}
 
 
 def print_hangman(num_of_tries):
@@ -83,3 +78,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

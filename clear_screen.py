@@ -74,7 +74,6 @@ def clear():
 
 
 def main():
-
     print(HANGMAN_PHOTOS[1])
     sleep(3)
     clear()
