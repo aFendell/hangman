@@ -2,7 +2,7 @@
 from opening_screen import opening_screen
 import choose_word
 from print_hangman import print_hangman
-from print_game_art import print_art
+import game_art
 from try_update_letter_guessed import try_update_letter_guessed
 from show_hidden_word import show_hidden_word
 import check_win
@@ -40,25 +40,25 @@ def main():
         if try_update_letter_guessed(ch, old_letters_guessed):
             # check if letter in secret word
             if ch in secret_word:
-                print_art("smile")
+                game_art.print_green("happy")
                 # check if win
                 if check_win.check_win(secret_word, old_letters_guessed):
                     show_hidden_word(secret_word, old_letters_guessed)
-                    sleep(3)
+                    sleep(2)
                     clear()
-                    print_art("win")
+                    game_art.print_yellow("win")
                     break
             # failed attempt
             else:
                 num_of_tries += 1
-                print_art("sad")
+                game_art.print_red("sad")
     # reached max tries - Game over
     if num_of_tries == 7:
         print_hangman(num_of_tries)
         show_hidden_word(secret_word, old_letters_guessed)
         sleep(2)
         clear()
-        print_art("lose")
+        game_art.print_magenta("lose")
     # exit game
     input("\n\nPress enter to exit\n\n")
 

@@ -1,5 +1,7 @@
+from colorama import Fore, init
+
 GAME_IMAGES = {
-    "smile": """
+    "happy": """
      .-^^^^^^-.
    .'          '.
   /   O      O   \\
@@ -41,25 +43,44 @@ GAME_IMAGES = {
  | |  _  / _ \\ | |\\/| |  _|   | | | \\ \\ / /|  _| | |_) |
  | |_| |/ ___ \\| |  | | |___  | |_| |\\ V / | |___|  _ < 
   \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\
-    """
-}
+    """}
 
 
-def print_art(image_name):
-    """
-    This function receives the image name and prints it on the screen.
-    :param image_name: name of the image to be printed
-    :type: image_name: str
-    :return: none
-    """
-    print(GAME_IMAGES[image_name])
+# def print_art(color,image_name):
+#     """
+#     This function receives the image name and prints it on the screen.
+#     :param image_name: name of the image to be printed
+#     :type: image_name: str
+#     :return: none
+#     """
+#     print(Fore. + GAME_IMAGES[image_name])
+
+
+def print_green(image_name):
+    init(autoreset=True)
+    print(Fore.GREEN + GAME_IMAGES[image_name])
+
+
+def print_red(image_name):
+    init(autoreset=True)
+    print(Fore.RED + GAME_IMAGES[image_name])
+
+
+def print_yellow(image_name):
+    init(autoreset=True)
+    print(Fore.YELLOW + GAME_IMAGES[image_name])
+
+
+def print_magenta(image_name):
+    init(autoreset=True)
+    print(Fore.MAGENTA + GAME_IMAGES[image_name])
 
 
 def main():
-    print_art("smile")
-    print_art("sad")
-    print_art("win")
-    print_art("lose")
+    print_green("happy")
+    print_red("sad")
+    print_yellow("win")
+    print_magenta("lose")
 
 
 if __name__ == '__main__':
