@@ -1,4 +1,4 @@
-from colorama import Fore, init
+from colorama import init, Fore
 
 GAME_IMAGES = {
     "happy": """
@@ -46,44 +46,30 @@ GAME_IMAGES = {
     """}
 
 
-# def print_art(color,image_name):
-#     """
-#     This function receives the image name and prints it on the screen.
-#     :param image_name: name of the image to be printed
-#     :type: image_name: str
-#     :return: none
-#     """
-#     print(Fore. + GAME_IMAGES[image_name])
-
-
-def print_green(image_name):
+def print_art(color_name, image_name):
+    """
+    This function receives the color and image name and prints the colored image to the screen.
+    :param color_name: color to print
+    :param image_name: name of the image to be printed
+    :type: color_name: str
+    :type: image_name: str
+    :return: none
+    """
     init(autoreset=True)
-    print(Fore.GREEN + GAME_IMAGES[image_name])
-
-
-def print_red(image_name):
-    init(autoreset=True)
-    print(Fore.RED + GAME_IMAGES[image_name])
-
-
-def print_yellow(image_name):
-    init(autoreset=True)
-    print(Fore.YELLOW + GAME_IMAGES[image_name])
-
-
-def print_magenta(image_name):
-    init(autoreset=True)
-    print(Fore.MAGENTA + GAME_IMAGES[image_name])
+    color = getattr(Fore, color_name)
+    print(color + GAME_IMAGES[image_name])
 
 
 def main():
-    print_green("happy")
-    print_red("sad")
-    print_yellow("win")
-    print_magenta("lose")
+    print_art("GREEN", "happy")
+    print_art("RED", "sad")
+    print_art("YELLOW", "win")
+    print_art("MAGENTA", "lose")
 
 
 if __name__ == '__main__':
     main()
+
+
 
 
