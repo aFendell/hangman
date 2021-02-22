@@ -1,7 +1,26 @@
 from colorama import init, Fore
 
 GAME_IMAGES = {
-    "happy": """
+    "large_hangman": """
+         ___________.._______
+        | .__________))______|
+        | |/ /       ||
+        | | /        ||.-''.
+        | |/         |/  _  \\
+        | |          ||  `/,|
+        | |          (\\`_.'
+        | |         .-`--'.
+        | |        /Y . . Y\\
+        | |      //  | . |  \\\\
+        | |     ')   |   |   (`
+        | |          ||'||
+        | |          || ||
+        | |         / | | \\
+       ===========|_`-' `-' |====
+       =|=|=======\\\\      ==|=|
+        | |        \\\\       | |
+        : :                 : :
+        """, "happy": """
      .-^^^^^^-.
    .'          '.
   /   O      O   \\
@@ -62,6 +81,7 @@ def print_art(color_name, image_name):
 
 
 def main():
+    print_art("BLUE", "large_hangman")
     print_art("GREEN", "happy")
     print_art("RED", "sad")
     print_art("YELLOW", "win")

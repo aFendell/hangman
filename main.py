@@ -1,12 +1,12 @@
 # Hangman Game
 from opening_screen import opening_screen
 import choose_word
-from print_hangman import print_hangman
-from game_art import print_art
-from try_update_letter_guessed import try_update_letter_guessed
-from show_hidden_word import show_hidden_word
-import check_win
 from clear_screen import clear
+from print_hangman import print_hangman
+from show_hidden_word import show_hidden_word
+from try_update_letter_guessed import try_update_letter_guessed
+from game_art import print_art
+import check_win
 from time import sleep
 
 
@@ -19,8 +19,10 @@ def main():
     index = choose_word.index_input()
     # Choose a secret word
     secret_word = choose_word.choose_word(file_path, index)
-    # game starts
-    print("\nGuess the secret word, or you'll be hanged!")
+    clear()
+    # start screen
+    print_art("CYAN", "large_hangman")
+    print("Guess the secret word, or you'll be hanged!")
     input("\n\nPress enter to start\n\n")
     clear()
     # set variables

@@ -13,7 +13,7 @@ def path_input():
     path_valid = False
     while not path_valid:
         # Ask user to type a file path
-        file_path = input("Please type a file path and press enter: ")
+        file_path = input("\nPlease type a file path and press enter: ")
         # check if path is valid
         if path.isfile(file_path):
             path_valid = True
