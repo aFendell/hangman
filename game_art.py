@@ -48,7 +48,8 @@ GAME_IMAGES = {
 
 def print_art(color_name, image_name):
     """
-    This function receives the color and image name and prints the colored image to the screen.
+    This function receives the color and image name and prints
+    the colored image to the screen.
     :param color_name: color to print
     :param image_name: name of the image to be printed
     :type: color_name: str
@@ -69,7 +70,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-

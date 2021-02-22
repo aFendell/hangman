@@ -19,15 +19,15 @@ def main():
     index = choose_word.index_input()
     # Choose a secret word
     secret_word = choose_word.choose_word(file_path, index)
-    # set variables
-    old_letters_guessed = []
-    num_of_tries = 1
     # game starts
     print("\nGuess the secret word, or you'll be hanged!")
     input("\n\nPress enter to start\n\n")
     clear()
+    # set variables
+    old_letters_guessed = []
+    num_of_tries = 0
     # run a loop for max 6 failed attempts
-    while num_of_tries < 7:
+    while num_of_tries < 6:
         # print the hangman image
         print_hangman(num_of_tries)
         # show partial secret word
@@ -44,20 +44,24 @@ def main():
                 # check if win
                 if check_win.check_win(secret_word, old_letters_guessed):
                     show_hidden_word(secret_word, old_letters_guessed)
-                    sleep(2)
-                    clear()
-                    print_art("YELLOW", "win")
+                    # print flashing win banner
+                    for i in range(3):
+                        sleep(1)
+                        clear()
+                        sleep(1)
+                        print_art("YELLOW", "win")
                     break
             # failed attempt
             else:
                 num_of_tries += 1
                 print_art("RED", "sad")
     # reached max tries - Game over
-    if num_of_tries == 7:
+    if num_of_tries == 6:
         print_hangman(num_of_tries)
         show_hidden_word(secret_word, old_letters_guessed)
-        sleep(2)
+        sleep(1)
         clear()
+        # print lose banner
         print_art("MAGENTA", "lose")
     # exit game
     input("\n\nPress enter to exit\n\n")
@@ -65,6 +69,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-

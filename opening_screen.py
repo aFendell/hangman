@@ -1,8 +1,8 @@
 # Hangman opening screen version 2
 def opening_screen():
     """
-    This function prints the opening screen of the hangman game - 'Hangman' writen in ASCII
-    and the number of failed attempts the user gets.
+    This function prints the opening screen of the hangman game - 'Hangman'
+    writen in ASCII art and the number of failed attempts the user gets.
     :param: none
     :return: none
     """
@@ -44,5 +44,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

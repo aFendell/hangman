@@ -1,6 +1,14 @@
-HANGMAN_PHOTOS = {1: """     x-------x
+HANGMAN_PHOTOS = {0: """     x-------x
      |/      |
      |
+     |
+     |
+     |
+    ============
+    """,
+                  1: """     x-------x
+     |/      |
+     |       0
      |
      |
      |
@@ -9,7 +17,7 @@ HANGMAN_PHOTOS = {1: """     x-------x
                   2: """     x-------x
      |/      |
      |       0
-     |
+     |       |
      |
      |
     ============
@@ -17,7 +25,7 @@ HANGMAN_PHOTOS = {1: """     x-------x
                   3: """     x-------x
      |/      |
      |       0
-     |       |
+     |      /|
      |
      |
     ============
@@ -25,7 +33,7 @@ HANGMAN_PHOTOS = {1: """     x-------x
                   4: """     x-------x
      |/      |
      |       0
-     |      /|
+     |      /|\\
      |
      |
     ============
@@ -34,19 +42,11 @@ HANGMAN_PHOTOS = {1: """     x-------x
      |/      |
      |       0
      |      /|\\
-     |
-     |
-    ============
-    """,
-                  6: """     x-------x
-     |/      |
-     |       0
-     |      /|\\
      |      /
      |
     ============
     """,
-                  7: """     x-------x
+                  6: """     x-------x
      |/      |
      |       0
      |      /|\\
@@ -60,7 +60,7 @@ def print_hangman(num_of_tries):
     This function receives the number of tries and prints out the hangman image.
     :param num_of_tries: The number of guesses the user got wrong.
     :type: num_of_tries: int
-    :return: print an image from the HANGMAN_PHOTOS dictionary (holds the seven images of the hangman).
+    :return: none
     :rtype: none
     """
     print(HANGMAN_PHOTOS[num_of_tries])

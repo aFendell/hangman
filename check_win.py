@@ -2,11 +2,11 @@ def check_win(secret_word, old_letters_guessed):
     """
     This function checks if the player guessed the entire secret_word.
     :param secret_word: The secret word the player needs to guess.
-    :param old_letters_guessed: The letters that the player had already guessed.
+    :param old_letters_guessed: The letters the player had already guessed.
     :type: secret_word: str
     :type: old_letters_guessed: list
-    :return: True if all the letters of the secret_word are in the old_letters_guessed list.
-             Else returns False
+    :return: True if all the letters of the secret_word are in the
+             old_letters_guessed list. Else it returns False
     :rtype: bool
     """
     win = ""
@@ -21,28 +21,6 @@ def check_win(secret_word, old_letters_guessed):
         return True
     elif win == "no":
         return False
-
-
-def win_screen():
-    """
-    This function prints the 'WIN' screen
-    :param: none
-    :return: none
-    """
-    WIN_ART = """
-            __          _______ _   _   _
-            \\ \\        / /_   _| \\ | | | |
-             \\ \\  /\\  / /  | | |  \\| | | |
-              \\ \\/  \\/ /   | | | . ` | | |
-               \\  /\\  /   _| |_| |\\  | |_|
-                \\/  \\/   |_____|_| \\_| (_)
-      _____                _          _       _       _
-     / ____|              | |        | |     | |     | |
-    | |  __ _ __ ___  __ _| |_       | | ___ | |__   | |
-    | | |_ | '__/ _ \\/ _` | __|  _   | |/ _ \\| '_ \\  | |
-    | |__| | | |  __/ (_| | |_  | |__| | (_) | |_) | |_|
-     \\_____|_|  \\___|\\__,_|\\__|  \\____/ \\___/|_.__/  (_)"""
-    print(WIN_ART)
 
 
 def main():
@@ -61,4 +39,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

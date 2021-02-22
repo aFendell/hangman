@@ -39,17 +39,18 @@ def index_input():
         if index.isnumeric() and int(index) > 0:
             index_valid = True
         else:
-            print("Word number is not valid! Make sure to type an integer greater then 0.")
+            print("Word number is not valid!\n"
+                  "Make sure to type an integer greater then 0.")
     return int(index)
 
 
 def choose_word(file_path, index):
     """
     This function receives:
-    1. The file path of a text file (str) containing words separated by whitespaces.
-    2. An index number (int) representing the position of a word.
+    1. The file path of a text file containing words separated by whitespaces.
+    2. An index number representing the position of a word.
     It returns the word in the index position.
-    :param file_path: The path to a text file containing words separated by whitespace.
+    :param file_path: Path to a file.
     :param index: An index number representing the position of a word.
     :type: file_path: str
     :type: index: int
@@ -79,5 +80,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-

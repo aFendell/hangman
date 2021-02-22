@@ -6,8 +6,8 @@ def check_valid_input(letter_guessed, old_letters_guessed):
     It returns 'True' if:
     1. The str 'letter_guessed' is 1 character only.
     2. The str 'letter_guessed' is an alphabetical character.
-    3. The str 'letter_guessed' is a letter that is not already in the list 'old_letters_guessed'.
-    Else it returns 'False'
+    3. The str 'letter_guessed' is a letter that is not already
+       in the list 'old_letters_guessed'. Else it returns 'False'
     :param letter_guessed
     :param old_letters_guessed:
     :type: letter_guessed: str
@@ -25,12 +25,14 @@ def check_valid_input(letter_guessed, old_letters_guessed):
 
 def try_update_letter_guessed(letter_guessed, old_letters_guessed):
     """
-    This function tries to add the new 'letter_guessed' to the list of the 'old_letters_guessed'.
-    If the letter is valid, meaning 1 alphabetical letter, that is not in the 'old_letters_guessed' list yet,
-    the function will add the new letter to the list and return a 'True' value.
-    If the letter is not valid, it will print the 'letter_guessed' as a capital,
-    and underneath it will print the 'old_letters_guessed' list as lower case letters,
-    separated with little arrows. It will also return a 'False' Value.
+    This function tries to add the new 'letter_guessed' to the list of the
+    'old_letters_guessed'. Using the 'check_valid_input' function, it checks if
+    the letter is valid - meaning 1 alphabetical letter, that is not in the
+    'old_letters_guessed' list yet, adds the new letter to the list and return
+    a 'True' value.
+    If the letter is not valid, it will print 'X', and underneath it will print
+    the 'old_letters_guessed' list as lower case letters, separated with little
+    arrows. It will also return a 'False' Value.
     :param letter_guessed: The new character entered by the user.
     :param old_letters_guessed: The old letters that were entered by the user.
     :type: letter_guessed: str
@@ -61,7 +63,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
